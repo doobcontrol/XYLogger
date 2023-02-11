@@ -80,7 +80,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\com.xiyuansoft.pub.log\com.xiyuansoft.pub.log.csproj">
+    <ProjectReference Include="..\com.xiyuansoft.pub.log\com.xiyuansoft.pub.log.csproj">
       <Project>{32b719a6-8c3b-4ee6-91e5-cd1c61b0e147}</Project>
       <Name>com.xiyuansoft.pub.log</Name>
     </ProjectReference>
