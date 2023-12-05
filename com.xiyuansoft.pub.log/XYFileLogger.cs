@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace com.xiyuansoft.pub.log
 {
@@ -70,7 +67,12 @@ namespace com.xiyuansoft.pub.log
 
         void IXYLogger.cleanLog(Dictionary<string, string> cleanPars)
         {
-            IEnumerable<string> fileEm= Directory.EnumerateFiles(logDir);
+            //向下兼容配置
+            //.net framework 3.5以下
+            //IEnumerable<string> fileEm = Directory.GetFiles(logDir);
+            //.net framework 4.5.2以上
+            IEnumerable<string> fileEm = Directory.EnumerateFiles(logDir);
+
             DateTime delDate = DateTime.Now.AddMonths(-3);  //删除三个月前的全部日志
             foreach (string fielname in fileEm)
             {
